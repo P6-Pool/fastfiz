@@ -9,6 +9,7 @@
 #include <gsl/gsl_poly.h>
 #include <gsl/gsl_randist.h>
 #include <gsl/gsl_sf_trig.h>
+#include <math.h>
 
 #define POOLFIZ_ERRORS
 //#define ALL_EVENTS
