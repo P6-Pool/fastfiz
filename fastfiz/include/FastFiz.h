@@ -1389,10 +1389,8 @@ public:
    * This has nothing to do with shot execution noise.
    */
   void addNoise(double dither);
-#ifndef SWIG
   /** Randomly position all balls on the table. */
   void randomize();
-#endif /* ! SWIG */
 
 #ifdef SWIG
   %exception {
