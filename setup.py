@@ -4,7 +4,15 @@
 setup.py file for fastfiz
 """
 
-from distutils.core import setup, Extension
+from setuptools import setup, Extension
+from setuptools.command.build_py import build_py as _build_py
+
+
+class build_py(_build_py):
+    def run(self):
+        self.run_command("build_ext")
+        return super().run()
+
 
 fastfiz_module = Extension(
         '_fastfiz',
@@ -19,9 +27,11 @@ fastfiz_module = Extension(
                  extra_link_args=['-lgsl', '-lgslcblas'],
 )
 
+
 setup(
     name = 'fastfiz',
     description = "fastfiz Billiards engine wrapper",
+    cmdclass = {'build_py': build_py},
     ext_modules = [fastfiz_module],
     py_modules = ["fastfiz"],
 )
