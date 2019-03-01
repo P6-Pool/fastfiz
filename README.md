@@ -1,6 +1,6 @@
 # Installation
 ```
-python setup.py build_ext
+pip install .
 ```
 
 # FastFiz: Computational Billiards Library
