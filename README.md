@@ -1,7 +1,7 @@
 # Installation
-```
-pip install .
-```
+- Install prerequisites: [SWIG](http://www.swig.org/), [GSL](https://www.gnu.org/software/gsl/)
+- Clone and cd to this repo.
+- `pip install .`
 
 # FastFiz: Computational Billiards Library
 ## Introduction
