@@ -737,6 +737,26 @@ bool Event::relatedTo(const Event &other) const {
 
 bool Event::involvesBall(Ball::Type b) const { return (_ball1 == b); }
 
+StateChangeEvent& eventToStateChangeEvent(Event &event){
+  return static_cast<StateChangeEvent&>(event);
+}
+
+BallCollisionEvent& eventToBallCollisionEvent(Event &event){
+  return static_cast<BallCollisionEvent&>(event);
+}
+
+RailCollisionEvent& eventToRailCollisionEvent(Event &event){
+  return static_cast<RailCollisionEvent&>(event);
+}
+
+PocketedEvent& eventToPocketedEvent(Event &event){
+  return static_cast<PocketedEvent&>(event);
+}
+
+CueStrikeEvent& eventToCueStrikeEvent(Event &event){
+  return static_cast<CueStrikeEvent&>(event);
+}
+
 bool BallCollisionEvent::relatedTo(const Event &other) const {
   return other.involvesBall(_ball1) || other.involvesBall(_ball2);
 }

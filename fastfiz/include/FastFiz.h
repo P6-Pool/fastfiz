@@ -1052,6 +1052,16 @@ private:
 #endif /* ! SWIG */
 };
 
+StateChangeEvent& eventToStateChangeEvent(Event &event);
+
+BallCollisionEvent& eventToBallCollisionEvent(Event &event);
+
+RailCollisionEvent& eventToRailCollisionEvent(Event &event);
+
+PocketedEvent& eventToPocketedEvent(Event &event);
+
+CueStrikeEvent& eventToCueStrikeEvent(Event &event);
+
 /** Detailed result of a simulation of a shot.
  * Public objects of this class can only be created by TableState::executeShot()
  * Constructing a Shot object starts the physics simulation.
