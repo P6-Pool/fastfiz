@@ -1349,8 +1349,8 @@ public:
   /** Const Iterator for end of ball vector */
   std::vector<Ball>::const_iterator getEnd() const { return balls.end(); }
 
-  void fixOverlap(const bool VERBOSE);
 #endif /* ! SWIG */
+  void fixOverlap(const bool VERBOSE);
   /** Modify specified ball id with specified ball information, adding if needed
    */
   void setBall(Ball &b);

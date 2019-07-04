@@ -1143,13 +1143,13 @@ signal(SIGABRT,&error);
       }
     }
 
-    /*
-       if (eventcounter<3000) {
+    
+    if (eventcounter<3000) {
        state.addNoise(1e-7);
        if (VERBOSE) {
-       cerr << "INFINITE LOOP AVOIDANCE -- adding random noise!" << endl;
+         cerr << "INFINITE LOOP AVOIDANCE -- adding random noise!" << endl;
        }
-       }*/
+    }
 
     // cerr << "future events:" << futureEvents.size() << endl;
     // cerr << *currentEvent << endl;
