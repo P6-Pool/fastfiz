@@ -29,9 +29,10 @@ fastfiz_module = Extension(
 
 
 setup(
-    name = 'fastfiz',
-    description = "fastfiz Billiards engine wrapper",
-    cmdclass = {'build_py': build_py},
-    ext_modules = [fastfiz_module],
-    py_modules = ["fastfiz"],
+    name='fastfiz',
+    version='0.0.1',
+    description="fastfiz Billiards engine wrapper",
+    cmdclass={'build_py': build_py},
+    ext_modules=[fastfiz_module],
+    py_modules=["fastfiz"],
 )
