@@ -1,13 +1,16 @@
 build
 .idea
+.DS_Store
 **/.nfs*
 __pycache__
 *.o
 *.so
 *.swp
 *_wrap.cpp
+*_wrap.cxx
 *.pyc
 *.png
 *.jpg
+JFastfiz
 fastfiz.py
 **/*.egg-info

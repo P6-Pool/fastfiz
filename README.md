@@ -10,6 +10,10 @@
 - Clone and cd to this repo.
 - `CFLAGS="-I/opt/homebrew/Cellar/gsl/2.7.1/include" LDFLAGS="-L/opt/homebrew/Cellar/gsl/2.7.1/lib" pip install .`
 
+# Build java bundle for Mac
+- `cd fastfiz`
+- `make -f Makefile_MacOSJava`
+
 # FastFiz: Computational Billiards Library
 ## Introduction
 The FastFiz library consists of two major components: The physics engine and
