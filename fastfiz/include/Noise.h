@@ -63,7 +63,6 @@ protected:
 
 }; // Class Noise
 
-#ifndef SWIG
 std::ostream &operator<<(std::ostream &os, const Noise &obj);
 
 /** Trivial class implementing null noise. */
@@ -117,7 +116,6 @@ protected:
 private:
   double a, b, theta, phi, v;
 };
-#endif
 
 } // Namespace pool
 

@@ -141,7 +141,6 @@ public:
    */
   static GameState *RackedState(GameType gameType);
 
-#ifndef SWIG
 
   //////////////////////////////////////////////////////////
   // CONSTRUCTORS
@@ -197,7 +196,6 @@ public:
    */
   friend std::ostream &operator<<(std::ostream &os, const GameState &obj);
   friend std::istream &operator>>(std::istream &is, GameState &obj);
-#endif /* ! SWIG */
 
   // Serilaize GameState as a string, only relevant parts.
   // Note: base classes can override, but default should be good
@@ -317,7 +315,7 @@ protected:
 #endif /* ! SWIG */
 };     // Class GameState
 
-#ifndef SWIG
+
 
 /** Implementation of the rules of Eight-Ball */
 class EightBallState : public GameState {
@@ -491,7 +489,6 @@ protected:
 
 }; // Class NineBallState
 
-#endif /* ! SWIG */
 std::string getRulesVersion();
 
 } // Namespace pool

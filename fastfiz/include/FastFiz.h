@@ -848,7 +848,7 @@ public:
   Ball &getBall1Data() { return *_ball1Data; }
 
   /** Sorts Events by time */
-  bool operator<(const Event &other) const;
+  //bool operator<(const Event &other) const;
   /** Event comparison function, calls operator< */
   static bool eventCmp(const Event *event1, const Event *event2);
 

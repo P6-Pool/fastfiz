@@ -725,10 +725,10 @@ string Table::pocketName(Pocket pocket) {
   }
 }
 
-bool Event::operator<(const Event &other) const { return _time < other._time; }
+//bool Event::operator<(const Event &other) const { return _time < other._time; }
 
 bool Event::eventCmp(const Event *event1, const Event *event2) {
-  return *event1 < *event2;
+  return event1->_time < event2->_time;
 }
 
 bool Event::relatedTo(const Event &other) const {
