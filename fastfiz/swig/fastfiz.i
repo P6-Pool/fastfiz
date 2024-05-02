@@ -6,7 +6,7 @@
 #include "Noise.h"
 #include "AIBase.h"
 #include "LogFile.h"
-#include "StopWatch.h"
+#include "Stopwatch.h"
 %}
 
 // %ignore operator<;
@@ -17,5 +17,5 @@
 %include "Noise.h"
 %include "AIBase.h"
 %include "LogFile.h"
-%include "StopWatch.h"
+%include "Stopwatch.h"
 
