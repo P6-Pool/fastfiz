@@ -33,8 +33,8 @@ GameState *GameState::Factory(istream &infoStream) {
   }
 
   default:
-    cerr << "Unidentified gameType." << endl;
-    cerr << "GameType: " << game_type << endl;
+//    cerr << "Unidentified gameType." << endl;
+//    cerr << "GameType: " << game_type << endl;
     throw "Unidentified gameType";
   }
   return NULL;
@@ -48,7 +48,7 @@ GameState *GameState::RackedState(GameType gameType) {
   }
 
   default:
-    cerr << "Unidentified gameType." << endl;
+//    cerr << "Unidentified gameType." << endl;
     break;
   }
   return NULL;
@@ -91,7 +91,7 @@ void GameState::toStream(ostream &out) const {
 //////////////////////////////////////////////////////////
 ShotResult GameState::executeShot(const GameShot &shot, Shot **shotObj) {
   _switchedSides = false;
-  cerr << "Trying to execute shot." << endl;
+//  cerr << "Trying to execute shot." << endl;
 
   if (shot.timeSpent && _timeLeft) {
     _timeLeft -= shot.timeSpent;
@@ -101,14 +101,14 @@ ShotResult GameState::executeShot(const GameShot &shot, Shot **shotObj) {
   }
 
   PreProcessCode code = preProcess(shot);
-  cerr << "Past preProcess, value was: " << code << endl;
+//  cerr << "Past preProcess, value was: " << code << endl;
 
   if (code == PPC_BADPARAMS)
     return SR_BAD_PARAMS;
   if (code == PPC_G_NOEXECUTE)
     return _switchedSides ? SR_OK_LOST_TURN : SR_OK;
   if (code == PPC_G_PLACECUE) {
-    cerr << "Placing ball at " << shot.cue_x << "," << shot.cue_y << endl;
+//    cerr << "Placing ball at " << shot.cue_x << "," << shot.cue_y << endl;
     _tableState.setBall(Ball::CUE, Ball::STATIONARY, shot.cue_x, shot.cue_y);
   }
   // If there is a bad placement, that will be caught by tablestate's excute
@@ -121,7 +121,7 @@ ShotResult GameState::executeShot(const GameShot &shot, Shot **shotObj) {
   } catch (BadShotException badshot) {
     // enum Type { OK, MISSED_BALL, INVALID_CUE_PARAMS, POOLFIZ_ERROR,
     // UNKNOWN_ERROR };
-    cerr << "Got here." << endl;
+//    cerr << "Got here." << endl;
     return SR_SHOT_IMPOSSIBLE;
   }
 
@@ -259,7 +259,7 @@ void EightBallState::processShot(const vector<Event *> &eventList,
 
   switch ((int)_turnType) {
   case TT_BREAK: {
-    cerr << "In turn-type BREAK!" << endl;
+//    cerr << "In turn-type BREAK!" << endl;
     int rail_collisions = 0;
     int pocketed_balls = 0;
     bool eight_ball_pocketed = false;
@@ -312,8 +312,8 @@ void EightBallState::processShot(const vector<Event *> &eventList,
   case TT_NORMAL:
   case TT_BALL_IN_HAND:
   case TT_BEHIND_LINE:
-    cerr << "WE've gotten to the TT_NORMAL, BallInHand,BehindLine cases"
-         << endl;
+//    cerr << "WE've gotten to the TT_NORMAL, BallInHand,BehindLine cases"
+//         << endl;
     {
       bool pocketed_legal_ball =
           false;                   // Set to true if a legal ball was pocketed.
@@ -437,9 +437,9 @@ void EightBallState::processShot(const vector<Event *> &eventList,
         foul = true;
       if (all_sunk && first_ball != Ball::EIGHT)
         foul = true;
-      cerr << "Open table: " << _openTable << "Solids: " << _solids
-           << "All sunk " << all_sunk << "First ball (enum): " << first_ball
-           << "EightBallPocketed " << eight_ball_pocketed << endl;
+//      cerr << "Open table: " << _openTable << "Solids: " << _solids
+//           << "All sunk " << all_sunk << "First ball (enum): " << first_ball
+//           << "EightBallPocketed " << eight_ball_pocketed << endl;
 
       if (eight_ball_pocketed) {
         _turnType = TT_WIN;
