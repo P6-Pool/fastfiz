@@ -5,7 +5,20 @@ SWIGFLAGS = -c++ -java -package JFastfiz -Iinclude -outdir $(MODULEDIR)
 CFLAGS = -fPIC -std=c++11 \
          -Iinclude \
          -I$(JDKLOC)/include \
-         -I$(JDKLOC)/include/linux
+
+
+
+# Determine OS
+UNAME_S := $(shell uname -s)
+
+ifeq ($(UNAME_S),Linux)
+    CFLAGS += -I$(JDKLOC)/include/linux
+endif
+
+ifeq ($(UNAME_S),Darwin)
+    CFLAGS += -I/opt/homebrew/Cellar/gsl/2.7.1/include -I$(JDKLOC)/include/darwin
+    LDFLAGS = -L/opt/homebrew/Cellar/gsl/2.7.1/lib -lgsl
+endif
 
 # Source files
 SRCDIR = src
