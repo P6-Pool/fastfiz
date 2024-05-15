@@ -322,6 +322,8 @@ public:
     rack();
   };
 
+
+#ifndef SWIG
   // The usual IO friend functions
   /**
    * Convienence functions to facilitate working with the strings used to
@@ -332,6 +334,7 @@ public:
    * See above
    */
   friend std::istream &operator>>(std::istream &is, EightBallState &obj);
+#endif /* ! SWIG */
 
   /**
    * Construct an EightBallState by reading from string. Used by Factory.
@@ -418,9 +421,13 @@ public:
     rack();
   };
 
+#ifndef SWIG
+
   // The usual IO friend functions
   friend std::ostream &operator<<(std::ostream &os, const NineBallState &obj);
   friend std::istream &operator>>(std::istream &is, NineBallState &obj);
+
+#endif /* ! SWIG */
 
   // Parse common part of GameState from string
   NineBallState(std::string gameString) {
