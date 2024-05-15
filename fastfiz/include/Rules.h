@@ -260,9 +260,6 @@ public:
    */
   virtual ShotResult executeShot(const GameShot &shot, Shot **shotObj = NULL);
 
-#ifndef SWIG
-
-protected:
   /** Returns true if the current turnType is defined for the current game. */
   virtual bool isLegalTurnType() const {
     return _turnType == TT_NORMAL || _turnType == TT_BALL_IN_HAND ||
@@ -312,7 +309,6 @@ protected:
   bool _curPlayerStarted;
   bool _switchedSides;
 
-#endif /* ! SWIG */
 };     // Class GameState
 
 
@@ -356,6 +352,8 @@ public:
    * Construct an EightBallState by reading from stream. Used by Factory.
    */
   EightBallState(std::istream &is) { importFromStream(is); };
+
+  virtual void setTurnTypeNormal();
 
 #ifndef SWIG
   // Puts out the default values.

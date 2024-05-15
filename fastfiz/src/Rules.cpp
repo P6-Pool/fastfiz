@@ -156,6 +156,11 @@ void GameState::switchSides() {
  **********EIGHT BALL IMPLEMENTATION *************************************
  ************************************************************************/
 
+void EightBallState::setTurnTypeNormal() {
+  _turnType = TT_NORMAL;
+}
+
+
 void EightBallState::importFromStream(istream &sourceStream) {
   // Call base class import
   GameState::importFromStream(sourceStream);
