@@ -14,8 +14,8 @@ endif
 
 ifeq ($(UNAME_S),Darwin)
 	JDKLOC := $(shell /usr/libexec/java_home)
-    CFLAGS += -I/opt/homebrew/Cellar/gsl/2.7.1/include -I$(JDKLOC)/include -I$(JDKLOC)/include/darwin
-    LDFLAGS = -L/opt/homebrew/Cellar/gsl/2.7.1/lib -lgsl
+    CFLAGS += -I/opt/homebrew/Cellar/gsl/2.8/include -I$(JDKLOC)/include -I$(JDKLOC)/include/darwin
+    LDFLAGS = -L/opt/homebrew/Cellar/gsl/2.8/lib -lgsl
 endif
 
 # Source files
